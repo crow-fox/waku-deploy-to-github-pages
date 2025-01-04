@@ -45,12 +45,12 @@ jobs:
         run: pnpm install
 
       - name: Build with Waku SSG
-        run: pnpm run build
-        
+        run: pnpm run ssg:build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/public
+          path: ./_dist/sub
 
   # Deployment job
   deploy:

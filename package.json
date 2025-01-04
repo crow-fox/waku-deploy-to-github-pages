@@ -7,7 +7,9 @@
     "dev": "waku dev",
     "build": "waku build",
     "start": "waku start",
-    "start:ssg": "serve ./dist/public"
+    "ssg:build": "rm -rf _dist && mkdir _dist && pnpm build && cp -r dist/public _dist/sub",
+    "ssg:start": "serve -s _dist/sub",
+    "ssg": "pnpm ssg:build && pnpm ssg:start"
   },
   "dependencies": {
     "react": "19.0.0",
